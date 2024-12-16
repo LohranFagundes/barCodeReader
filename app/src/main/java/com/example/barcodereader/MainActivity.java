@@ -31,9 +31,9 @@ public class MainActivity extends AppCompatActivity {
     private BarcodeAdapter adapter;
     private ArrayList<String> barcodeList;
     private Uri selectedFileUri;
-    private EditText manualBarcodeInput; // Nova variável
+    private EditText manualBarcodeInput;
     private Button addButton;
-    private int editingPosition = -1; // Initialize to -1 (no item being edited)
+    private int editingPosition = -1;
     private Button saveEditButton;
 
 
@@ -119,7 +119,6 @@ public class MainActivity extends AppCompatActivity {
                     }
                     @Override
                     public void onLongItemClick(View view, int position) {
-// Excluir item da lista
                         barcodeList.remove(position);
                         adapter.notifyItemRemoved(position);
                     }

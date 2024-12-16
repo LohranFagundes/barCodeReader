@@ -33,8 +33,6 @@ public class BarcodeReaderActivity extends AppCompatActivity {
         barcodeScannerView = findViewById(R.id.barcodeScannerView);
 
 
-// Verificar permissão da câmera
-
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
                 != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}, CAMERA_PERMISSION_REQUEST);
@@ -73,27 +71,15 @@ public class BarcodeReaderActivity extends AppCompatActivity {
     @Override
 
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
-
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-
         if (requestCode == CAMERA_PERMISSION_REQUEST) {
-
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-
                 startCamera();
-
             } else {
-
-// Exibir mensagem ao usuário se a permissão foi negada
-
                 Toast.makeText(this, "Permissão da câmera necessária para ler códigos de barras", Toast.LENGTH_SHORT).show();
-
                 finish();
-
             }
-
         }
-
     }
 
 
